@@ -6,6 +6,7 @@ package org.cocos2dx.cpp;
 
 import android.os.Debug;
 import android.view.Gravity;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -285,7 +286,10 @@ public class Yodo1Ads {
                     }
                 });
 
-                activity.setContentView(adRelativeLayout);
+                FrameLayout rootView = activity.findViewById(android.R.id.content);
+
+                rootView.addView(adRelativeLayout);
+                //activity.setContentView(adRelativeLayout);
                 bannerAdView.loadAd();
             }
         });
